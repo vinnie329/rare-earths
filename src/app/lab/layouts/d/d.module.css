@@ -1,0 +1,341 @@
+/* ------------------------------------------------
+   Layout D — Abstract Visualization
+   Same sidebar structure as A, but right panel is
+   a full-bleed animated visualization. Extraction
+   and supply chain info moved to left column.
+   ------------------------------------------------ */
+
+.shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+/* Sidebar — reuses global sidebar styles but scoped */
+.sidebar {
+  width: 320px;
+  min-width: 320px;
+  height: 100%;
+  border-right: 1px solid var(--line-color);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 5;
+}
+
+.sidebarTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.elementList {
+  list-style: none;
+  flex: 1;
+}
+
+.elementItem {
+  border-bottom: 1px solid var(--line-color);
+}
+
+.elementBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem;
+  width: 100%;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.elementBtn:hover {
+  background: #e8e8e6;
+}
+
+.elementBtnActive {
+  composes: elementBtn;
+  background: var(--text-color);
+  color: white;
+}
+
+.elementBtnActive .elementNum,
+.elementBtnActive .elementSym {
+  color: #666;
+}
+
+.elementNum {
+  font-size: 0.75rem;
+  width: 2rem;
+  font-feature-settings: "tnum" on;
+}
+
+.elementName {
+  flex: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.elementSym {
+  color: var(--accent-color);
+  font-size: 0.75rem;
+}
+
+/* Main content area */
+.main {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  padding: 6rem 2.5rem 4rem;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.heroMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--line-color);
+  padding-top: 0.5rem;
+}
+
+.heroLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+}
+
+.heroTitle {
+  font-size: 6.5rem;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-left: -0.3rem;
+  text-transform: uppercase;
+}
+
+.heroSup {
+  font-size: 0.5em;
+  vertical-align: super;
+  margin-left: 0.2rem;
+}
+
+/* Data grid */
+.dataGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.dataCell {
+  padding: 1.5rem 2.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.dataCell:last-child {
+  border-right: none;
+}
+
+.dataCellLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+}
+
+.dataCellValue {
+  font-size: 1.8rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.dataCellSub {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+/* Content split — left text, right viz */
+.contentSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 55vh;
+}
+
+.contentLeft {
+  padding: 2.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.contentRight {
+  position: relative;
+  background: #e5e5e3;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.editorialText {
+  max-width: 45ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Applications list */
+.appsList {
+  list-style: none;
+  margin-top: 2.5rem;
+}
+
+.appsItem {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.appsNum {
+  font-feature-settings: "tnum" on;
+  color: var(--accent-color);
+  font-size: 0.85rem;
+}
+
+/* Extraction section — now in left column */
+.extractionSection {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line-color);
+}
+
+.extractionRegions {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Supply chain status — card style */
+.supplyCard {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  background: #efefed;
+}
+
+.supplyValue {
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+/* Viz container */
+.vizContainer {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.vizLabel {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.65rem;
+  border: 1px solid var(--line-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  z-index: 2;
+}
+
+.vizElementLabel {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(26, 26, 26, 0.04);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 4rem;
+  }
+  .dataGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dataCell:nth-child(2) {
+    border-right: none;
+  }
+  .dataCell:nth-child(3),
+  .dataCell:nth-child(4) {
+    border-top: 1px solid var(--line-color);
+  }
+  .dataCell:nth-child(4) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+  }
+  .heroTitle {
+    font-size: 3rem;
+  }
+  .contentSplit {
+    grid-template-columns: 1fr;
+  }
+  .contentLeft {
+    border-right: none;
+  }
+  .contentRight {
+    border-top: 1px solid var(--line-color);
+    min-height: 350px;
+  }
+}

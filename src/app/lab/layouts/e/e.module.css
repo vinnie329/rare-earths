@@ -1,0 +1,325 @@
+/* ------------------------------------------------
+   Layout E — Atomic Structure Hero
+   Scientific journal meets Swiss typography.
+   Full-bleed orbital diagram as hero, horizontal
+   element strip, scroll-triggered data sections.
+   ------------------------------------------------ */
+
+.shell {
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+/* Top bar */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid var(--line-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 20;
+}
+
+.topTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.topMeta {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+/* Hero — full viewport with orbital diagram */
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  border-bottom: 1px solid var(--line-color);
+  background: #e5e5e3;
+  overflow: hidden;
+}
+
+.heroOrbitals {
+  position: absolute;
+  inset: 0;
+}
+
+/* Element name overlay on the diagram */
+.heroText {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.heroSeries {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+}
+
+.heroName {
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  color: var(--text-color);
+}
+
+.heroSup {
+  font-size: 0.4em;
+  vertical-align: super;
+  margin-left: 0.1em;
+  color: var(--accent-color);
+}
+
+.heroRef {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  z-index: 2;
+}
+
+/* Horizontal element strip */
+.strip {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line-color);
+  scrollbar-width: none;
+  background: var(--bg-color);
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+.stripBtn {
+  flex-shrink: 0;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-right: 1px solid var(--line-color);
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  text-align: center;
+  transition: background-color 0.15s ease;
+  min-width: 64px;
+}
+
+.stripBtn:hover {
+  background: #e8e8e6;
+}
+
+.stripBtnActive {
+  composes: stripBtn;
+  background: var(--text-color);
+  color: white;
+}
+
+.stripBtnActive .stripNum {
+  color: #666;
+}
+
+.stripSym {
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  letter-spacing: 0.04em;
+}
+
+.stripNum {
+  font-size: 0.5rem;
+  color: var(--accent-color);
+  display: block;
+  margin-top: 0.15rem;
+  font-feature-settings: "tnum" on;
+}
+
+/* Data grid — appears below hero */
+.dataGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.dataCell {
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.dataCell:last-child {
+  border-right: none;
+}
+
+.dataCellLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.dataCellValue {
+  font-size: 1.8rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.dataCellSub {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  margin-top: 0.15rem;
+  display: block;
+}
+
+/* Content — editorial + applications + extraction */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 40vh;
+}
+
+.contentLeft {
+  padding: 2.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.contentRight {
+  padding: 2.5rem;
+}
+
+.sectionLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.editorialText {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 48ch;
+  margin-bottom: 2rem;
+}
+
+.appsList {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.appsItem {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line-color);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.appsNum {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  font-feature-settings: "tnum" on;
+}
+
+/* Extraction + supply chain on right */
+.extractionBlock {
+  margin-bottom: 2.5rem;
+}
+
+.extractionValue {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.supplyCard {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  background: #efefed;
+}
+
+.supplyValue {
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* Electron config display */
+.electronConfig {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line-color);
+}
+
+.shellGrid {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.shellTag {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-feature-settings: "tnum" on;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dataGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dataCell:nth-child(2) {
+    border-right: none;
+  }
+  .dataCell:nth-child(3),
+  .dataCell:nth-child(4) {
+    border-top: 1px solid var(--line-color);
+  }
+  .dataCell:nth-child(4) {
+    border-right: none;
+  }
+  .heroName {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+  .heroName {
+    font-size: 2.5rem;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .contentLeft {
+    border-right: none;
+    border-bottom: 1px solid var(--line-color);
+  }
+}

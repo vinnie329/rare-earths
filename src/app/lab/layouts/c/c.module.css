@@ -1,0 +1,371 @@
+/* ------------------------------------------------
+   Layout C — Editorial Grid
+   Magazine-style dense layout, no sidebar,
+   element symbol as massive background watermark
+   ------------------------------------------------ */
+
+.shell {
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+  position: relative;
+}
+
+/* Floating nav */
+.floatNav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.floatTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectorBtn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line-color);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  color: var(--text-color);
+}
+
+.selectorBtn:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+.selectorBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.selectorBtn:disabled:hover {
+  background: none;
+  color: var(--text-color);
+  border-color: var(--line-color);
+}
+
+.selectorCurrent {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 5rem;
+  text-align: center;
+}
+
+/* Hero area — asymmetric split */
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 55vh;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.heroLeft {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  font-size: 28rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #e8e8e5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroSeries {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroName {
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.heroSup {
+  font-size: 0.35em;
+  vertical-align: super;
+  margin-left: 0.15em;
+  color: var(--accent-color);
+}
+
+.heroRight {
+  border-left: 1px solid var(--line-color);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.heroData {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.heroData:last-child {
+  border-bottom: none;
+}
+
+.heroDataLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.heroDataValue {
+  font-size: 2.2rem;
+  font-weight: 400;
+  font-feature-settings: "tnum" on;
+}
+
+.heroDataSub {
+  font-size: 0.7rem;
+  color: var(--accent-color);
+  margin-top: 0.2rem;
+}
+
+/* Dense content grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  min-height: 40vh;
+}
+
+.editorial {
+  padding: 2.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.editorialLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.editorialText {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 48ch;
+  margin-bottom: 1.5rem;
+}
+
+.applications {
+  border-right: 1px solid var(--line-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.appsHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+
+.appItem {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+}
+
+.appItem:last-child {
+  border-bottom: none;
+}
+
+.appNum {
+  font-size: 0.65rem;
+  color: var(--accent-color);
+  font-feature-settings: "tnum" on;
+}
+
+.extraction {
+  display: flex;
+  flex-direction: column;
+}
+
+.extractHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+
+.extractMap {
+  flex: 1;
+  background: #e5e5e3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.extractDots {
+  width: 85%;
+  height: 65%;
+  opacity: 0.2;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.extractTag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: var(--bg-color);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--line-color);
+  border-radius: 4px;
+}
+
+.supplyRow {
+  border-top: 1px solid var(--line-color);
+  padding: 1rem 1.5rem;
+  background: #efefed;
+}
+
+.supplyLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.supplyValue {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Additional data strip at bottom */
+.configStrip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line-color);
+}
+
+.configCell {
+  padding: 1.25rem 2.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.configCell:last-child {
+  border-right: none;
+}
+
+.configLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 0.4rem;
+}
+
+.configValue {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-feature-settings: "tnum" on;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .extraction {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--line-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .heroRight {
+    border-left: none;
+    border-top: 1px solid var(--line-color);
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .heroData:last-child {
+    border-bottom: none;
+    border-left: 1px solid var(--line-color);
+  }
+  .heroName {
+    font-size: 3rem;
+  }
+  .watermark {
+    font-size: 14rem;
+  }
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  .editorial {
+    border-right: none;
+  }
+  .applications {
+    border-right: none;
+    border-top: 1px solid var(--line-color);
+  }
+}

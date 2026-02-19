@@ -1,0 +1,993 @@
+/* ------------------------------------------------
+   Component variant styles
+   Scoped to avoid collision with global CSS
+   ------------------------------------------------ */
+
+/* --- Hero variants --- */
+
+/* Hero A: Current — left-aligned oversized */
+.heroA {
+  padding: 3rem 2rem 2rem;
+  border-bottom: 1px solid var(--line-color);
+  background: var(--bg-color);
+}
+
+.heroALabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heroATitle {
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.heroASup {
+  font-size: 0.4em;
+  vertical-align: super;
+  margin-left: 0.1em;
+  color: var(--accent-color);
+}
+
+/* Hero B: Centered with symbol watermark */
+.heroB {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--line-color);
+  background: var(--bg-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBWatermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14rem;
+  font-weight: 300;
+  color: #e5e5e2;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroBLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBTitle {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBNumber {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero C: Minimal — extreme scale, nothing else */
+.heroC {
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid var(--line-color);
+  background: var(--bg-color);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.heroCTitle {
+  font-size: 4.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+}
+
+.heroCMeta {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* --- Data Grid variants --- */
+
+/* Grid A: Current — 4 columns */
+.gridA {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line-color);
+  background: var(--bg-color);
+}
+
+.gridACell {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.gridACell:last-child {
+  border-right: none;
+}
+
+.gridALabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.gridAValue {
+  font-size: 1.4rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.gridASub {
+  font-size: 0.65rem;
+  color: var(--accent-color);
+  margin-top: 0.1rem;
+  display: block;
+}
+
+/* Grid B: Rounded cards */
+.gridB {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.gridBCard {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  background: white;
+}
+
+.gridBLabel {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.gridBValue {
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.gridBSub {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+  margin-top: 0.1rem;
+  display: block;
+}
+
+/* Grid C: Horizontal scroll strip */
+.gridC {
+  display: flex;
+  overflow-x: auto;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--line-color);
+  scrollbar-width: none;
+}
+
+.gridC::-webkit-scrollbar {
+  display: none;
+}
+
+.gridCCell {
+  flex-shrink: 0;
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--line-color);
+  min-width: 160px;
+}
+
+.gridCLabel {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+}
+
+.gridCValue {
+  font-size: 1.8rem;
+  font-weight: 300;
+  display: block;
+}
+
+.gridCSub {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+  margin-top: 0.15rem;
+  display: block;
+}
+
+/* --- Navigation variants --- */
+
+/* Nav A: Current vertical list */
+.navA {
+  background: var(--bg-color);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.navAItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--line-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.navAActive {
+  composes: navAItem;
+  background: var(--text-color);
+  color: white;
+}
+
+.navANum {
+  font-size: 0.6rem;
+  width: 1.5rem;
+  color: var(--accent-color);
+  font-feature-settings: "tnum" on;
+}
+
+.navAActive .navANum,
+.navAActive .navASym {
+  color: #666;
+}
+
+.navAName {
+  flex: 1;
+}
+
+.navASym {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+}
+
+/* Nav B: Symbol grid */
+.navB {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background: var(--bg-color);
+}
+
+.navBCell {
+  aspect-ratio: 1;
+  border-right: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.navBCell:hover {
+  background: #e8e8e6;
+}
+
+.navBActive {
+  composes: navBCell;
+  background: var(--text-color);
+  color: white;
+}
+
+.navBActive .navBNum {
+  color: #666;
+}
+
+.navBSym {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.navBNum {
+  font-size: 0.5rem;
+  color: var(--accent-color);
+  font-feature-settings: "tnum" on;
+}
+
+/* Nav C: Horizontal pills */
+.navC {
+  display: flex;
+  gap: 0.4rem;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--line-color);
+  scrollbar-width: none;
+}
+
+.navC::-webkit-scrollbar {
+  display: none;
+}
+
+.navCPill {
+  flex-shrink: 0;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  color: var(--text-color);
+}
+
+.navCPill:hover {
+  border-color: var(--accent-color);
+}
+
+.navCActive {
+  composes: navCPill;
+  background: var(--text-color);
+  color: white;
+  border-color: var(--text-color);
+}
+
+/* --- Extraction Map variants --- */
+
+/* Map A: Current — dot grid with overlay tag + supply bar */
+.mapA {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+}
+
+.mapAArea {
+  background: #e5e5e3;
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapADots {
+  width: 80%;
+  height: 60%;
+  opacity: 0.3;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.mapATag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  border: 1px solid var(--line-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mapADot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.mapABar {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--line-color);
+  background: #efefed;
+}
+
+.mapABarLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.mapABarValue {
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* Map B: Regional breakdown list with indicators */
+.mapB {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+}
+
+.mapBHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapBList {
+  list-style: none;
+}
+
+.mapBRegion {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mapBDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-color);
+  flex-shrink: 0;
+}
+
+.mapBDotSecondary {
+  composes: mapBDot;
+  width: 6px;
+  height: 6px;
+  background: none;
+  border: 1.5px solid var(--text-color);
+}
+
+.mapBInfo {
+  flex: 1;
+}
+
+.mapBCountry {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.mapBRole {
+  font-size: 0.65rem;
+  color: var(--accent-color);
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mapBShare {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-feature-settings: "tnum" on;
+  color: var(--text-color);
+}
+
+.mapBBar {
+  padding: 1rem 1.5rem;
+  background: #efefed;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.mapBStatus {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.mapBStatusValue {
+  font-size: 0.8rem;
+}
+
+/* Map C: Minimal — abstract visualization with large text */
+.mapC {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  position: relative;
+}
+
+.mapCVisual {
+  min-height: 200px;
+  background: #e5e5e3;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapCCircle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mapCRegionText {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.mapCMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line-color);
+}
+
+.mapCMetaCell {
+  padding: 1rem 1.5rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.mapCMetaCell:last-child {
+  border-right: none;
+}
+
+.mapCMetaLabel {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 0.35rem;
+}
+
+.mapCMetaValue {
+  font-size: 0.85rem;
+}
+
+/* ------------------------------------------------
+   Supply Info variants — combining extraction + supply chain
+   ------------------------------------------------ */
+
+/* Supply A: Side-by-side columns in a single card */
+.supplyA {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.supplyACell {
+  padding: 1.25rem 1.5rem;
+}
+
+.supplyACell:first-child {
+  border-right: 1px solid var(--line-color);
+}
+
+.supplyALabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.supplyAValue {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Supply B: Stacked with thin divider */
+.supplyB {
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.supplyBRow {
+  padding: 1.25rem 1.5rem;
+}
+
+.supplyBRow:first-child {
+  border-bottom: 1px solid var(--line-color);
+}
+
+.supplyBLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.supplyBValue {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Supply C: Inline flowing sentence */
+.supplyC {
+  padding: 1.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.supplyCHighlight {
+  font-weight: 500;
+}
+
+.supplyCDivider {
+  display: inline-block;
+  margin: 0 0.6em;
+  color: var(--accent-color);
+}
+
+/* Supply D: Extraction text with status pill */
+.supplyD {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  background: var(--bg-color);
+}
+
+.supplyDLeft {}
+
+.supplyDLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.supplyDValue {
+  font-size: 0.9rem;
+}
+
+.supplyDPill {
+  flex-shrink: 0;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  margin-top: 0.2rem;
+}
+
+/* Supply E: Two-tone split — dark left, light right */
+.supplyE {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.supplyELeft {
+  padding: 1.25rem 1.5rem;
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.supplyERight {
+  padding: 1.25rem 1.5rem;
+  background: #efefed;
+}
+
+.supplyELabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.supplyEValue {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Supply F: Minimal key-value pairs, no borders */
+.supplyF {
+  display: flex;
+  gap: 3rem;
+}
+
+.supplyFPair {}
+
+.supplyFLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.supplyFValue {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* ------------------------------------------------
+   Atomic Structure — Assembled variant
+   ------------------------------------------------ */
+.atomAssembled {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+}
+
+.atomAssembledViz {
+  position: relative;
+  background: #e5e5e3;
+  min-height: 300px;
+}
+
+.atomAssembledOverlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.65rem;
+  border: 1px solid var(--line-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.atomAssembledInfo {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--line-color);
+}
+
+.atomAssembledLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.atomAssembledTags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.atomAssembledTag {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-feature-settings: "tnum" on;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+}
+
+/* ------------------------------------------------
+   Sound Button variants
+   ------------------------------------------------ */
+
+/* Shared base for demo wrappers */
+.soundDemo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  background: #e5e5e3;
+}
+
+/* A: Label tag — matches map overlay style */
+.soundA {
+  background: var(--bg-color);
+  border: 1px solid var(--line-color);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text-color);
+}
+
+.soundA:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* B: Pill toggle */
+.soundB {
+  background: none;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.soundB:hover {
+  border-color: var(--text-color);
+}
+
+.soundBDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-color);
+}
+
+.soundBDotOff {
+  composes: soundBDot;
+  background: var(--accent-color);
+  opacity: 0.4;
+}
+
+/* C: Icon only — minimal circle */
+.soundC {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line-color);
+  background: var(--bg-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  font-family: inherit;
+  line-height: 1;
+}
+
+.soundC:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* D: Underline text link */
+.soundD {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.soundD:hover {
+  color: var(--text-color);
+}
+
+/* E: Filled / outlined toggle */
+.soundEOn {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.soundEOff {
+  composes: soundEOn;
+  background: none;
+  color: var(--text-color);
+  border-color: var(--line-color);
+}
+
+/* F: Slash-through icon with text */
+.soundF {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-color);
+}
+
+.soundF:hover {
+  opacity: 0.7;
+}
+
+.soundFIcon {
+  font-size: 0.85rem;
+  line-height: 1;
+  position: relative;
+}
+
+.soundFSlash {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soundFSlash::after {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 1px;
+  background: var(--text-color);
+  transform: rotate(-45deg);
+}

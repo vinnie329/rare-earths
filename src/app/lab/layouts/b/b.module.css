@@ -1,0 +1,315 @@
+/* ------------------------------------------------
+   Layout B — Horizontal Strip
+   Full-bleed hero, horizontal scrolling element index
+   ------------------------------------------------ */
+
+.shell {
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+}
+
+/* Top nav */
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid var(--line-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 10;
+}
+
+.navTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.navMeta {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+
+/* Hero */
+.hero {
+  padding: 5rem 2rem 3rem;
+  border-bottom: 1px solid var(--line-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSymbol {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18rem;
+  font-weight: 300;
+  color: var(--line-color);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.heroName {
+  font-size: 7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  position: relative;
+  z-index: 1;
+}
+
+.heroNumber {
+  font-size: 0.45em;
+  vertical-align: super;
+  margin-left: 0.15em;
+  color: var(--accent-color);
+}
+
+/* Horizontal element strip */
+.strip {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line-color);
+  scrollbar-width: none;
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+.stripItem {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+  border-right: 1px solid var(--line-color);
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  font-family: var(--font-family);
+  transition: background-color 0.15s ease;
+  text-align: left;
+  min-width: 120px;
+}
+
+.stripItem:hover {
+  background: #e8e8e6;
+}
+
+.stripItemActive {
+  composes: stripItem;
+  background: var(--text-color);
+  color: white;
+}
+
+.stripItemActive .stripNumber,
+.stripItemActive .stripSymbol {
+  color: #666;
+}
+
+.stripNumber {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-feature-settings: "tnum" on;
+}
+
+.stripName {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.stripSymbol {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+  display: block;
+  margin-top: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+/* Data row */
+.dataRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.dataCell {
+  padding: 1.25rem 2rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.dataCell:last-child {
+  border-right: none;
+}
+
+.dataCellLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.dataCellValue {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.dataCellSub {
+  font-size: 0.7rem;
+  color: var(--accent-color);
+  margin-top: 0.15rem;
+  display: block;
+}
+
+/* Content */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 40vh;
+}
+
+.contentLeft {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--line-color);
+}
+
+.contentRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.contentText {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 50ch;
+  margin-bottom: 2rem;
+}
+
+.appsList {
+  list-style: none;
+  margin-top: 2.5rem;
+}
+
+.appsItem {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line-color);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.appsNumber {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  font-feature-settings: "tnum" on;
+}
+
+/* Map */
+.mapArea {
+  flex: 1;
+  background: #e5e5e3;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapTag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg-color);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.6rem;
+  border: 1px solid var(--line-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mapDots {
+  width: 80%;
+  height: 60%;
+  opacity: 0.25;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.supplyBar {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--line-color);
+  background: #efefed;
+}
+
+.supplyLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.supplyValue {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroName {
+    font-size: 3.5rem;
+  }
+  .heroSymbol {
+    font-size: 10rem;
+  }
+  .dataRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dataCell:nth-child(2) {
+    border-right: none;
+  }
+  .dataCell:nth-child(3),
+  .dataCell:nth-child(4) {
+    border-top: 1px solid var(--line-color);
+  }
+  .dataCell:nth-child(4) {
+    border-right: none;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .contentLeft {
+    border-right: none;
+  }
+}

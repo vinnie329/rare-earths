@@ -1,0 +1,387 @@
+/* ------------------------------------------------
+   Lab — Design exploration environment
+   ------------------------------------------------ */
+
+.lab-shell {
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.lab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 100;
+}
+
+.lab-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lab-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+
+.lab-nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lab-nav a {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--accent-color);
+  padding: 0.3rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lab-nav a:hover {
+  border-color: var(--line-color);
+  color: var(--text-color);
+}
+
+.lab-nav a.active {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.lab-back {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.lab-back:hover {
+  color: var(--text-color);
+}
+
+/* Lab index page */
+.lab-index {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.lab-index-title {
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.lab-index-sub {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 3rem;
+  max-width: 40ch;
+}
+
+.lab-index-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.lab-index-links a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lab-index-links a:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+/* ------------------------------------------------
+   Layout variant preview grid
+   ------------------------------------------------ */
+.lab-section-header {
+  padding: 3rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.lab-section-title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.lab-section-count {
+  font-size: 0.65rem;
+  vertical-align: super;
+  color: var(--accent-color);
+  margin-left: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.lab-section-desc {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  max-width: 55ch;
+}
+
+/* Variant preview cards */
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.variant-card {
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.variant-card:hover {
+  border-color: var(--accent-color);
+}
+
+.variant-preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.variant-preview iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;
+}
+
+.variant-meta {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.variant-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.variant-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.variant-open {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  transition: all 0.15s ease;
+}
+
+.variant-open:hover {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+/* ------------------------------------------------
+   Component exploration
+   ------------------------------------------------ */
+.component-section {
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.component-section:last-child {
+  border-bottom: none;
+}
+
+.component-section-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.component-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.component-card {
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.component-card-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--line-color);
+  background: #fafaf8;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.component-card-label:hover {
+  color: var(--text-color);
+  background: #f2f2f0;
+}
+
+.component-card-label-icon {
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.component-card-label:hover .component-card-label-icon {
+  opacity: 1;
+}
+
+.component-card-body {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------
+   Lab responsive
+   ------------------------------------------------ */
+@media (max-width: 640px) {
+  .lab-index-title {
+    font-size: 2.5rem;
+  }
+  .lab-index-links {
+    flex-direction: column;
+  }
+  .variant-grid {
+    grid-template-columns: 1fr;
+  }
+  .component-row {
+    grid-template-columns: 1fr;
+  }
+  .lab-section-header {
+    padding: 2rem 1rem 1rem;
+  }
+  .variant-grid {
+    padding: 1rem;
+  }
+}
+
+/* ------------------------------------------------
+   Isolated component view
+   ------------------------------------------------ */
+.isolate-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.isolate-label {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+
+.isolate-back {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--line-color);
+  border-radius: 100px;
+  transition: all 0.15s ease;
+}
+
+.isolate-back:hover {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.isolate-component {
+  width: 100%;
+  max-width: 720px;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.isolate-component-wide {
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
