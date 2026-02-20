@@ -34,7 +34,7 @@ export default function ElementProfile({ element, onBack }: ElementProfileProps)
       <section className="element-hero">
         <div className="hero-top-data">
           <span className="label">{element.series}</span>
-          <span className="label mono">Ref. {refNumber}</span>
+          <span className="label mono">{element.symbol} {refNumber}</span>
         </div>
         <h1 className="hero-title">
           {element.name}

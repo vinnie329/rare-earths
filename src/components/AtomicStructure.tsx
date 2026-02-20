@@ -236,15 +236,25 @@ export default function AtomicStructure({
       }
     };
 
-    // Pentatonic scale starting from C5, ascending per shell
-    const CHIME_FREQUENCIES = [523, 587, 659, 784, 880, 988, 1047, 1175];
-
     function playChime(shellIndex: number) {
       if (!soundOnRef.current) return;
       const ctx = audioCtxRef.current;
       if (!ctx || ctx.state !== "running") return;
 
-      const freq = CHIME_FREQUENCIES[shellIndex] || CHIME_FREQUENCIES[CHIME_FREQUENCIES.length - 1];
+      // C major pentatonic (C, D, E, G, A) across 3 octaves from C4
+      const PENTATONIC = [
+        0, 2, 4, 7, 9,      // C4, D4, E4, G4, A4
+        12, 14, 16, 19, 21,  // C5, D5, E5, G5, A5
+        24, 26, 28, 31, 33,  // C6, D6, E6, G6, A6
+      ];
+      // Map electron count (2–32) across ~2 octaves, snap to nearest pentatonic note
+      const electronCount = shells[shellIndex] || 2;
+      const raw = ((electronCount - 2) / 30) * 24;
+      let nearest = PENTATONIC[0];
+      for (const s of PENTATONIC) {
+        if (Math.abs(s - raw) < Math.abs(nearest - raw)) nearest = s;
+      }
+      const freq = 261.63 * Math.pow(2, nearest / 12);
       const now = ctx.currentTime;
 
       // Main tone — sine for a pure, bell-like quality
@@ -257,15 +267,15 @@ export default function AtomicStructure({
       osc2.type = "sine";
       osc2.frequency.value = freq * 2.5;
 
-      // Gain envelope — quick attack, gentle decay
+      // Gain envelope — quick attack, gentle decay (reduced 25%)
       const gain = ctx.createGain();
       gain.gain.setValueAtTime(0, now);
-      gain.gain.linearRampToValueAtTime(0.12, now + 0.01);
+      gain.gain.linearRampToValueAtTime(0.09, now + 0.01);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
 
       const gain2 = ctx.createGain();
       gain2.gain.setValueAtTime(0, now);
-      gain2.gain.linearRampToValueAtTime(0.04, now + 0.01);
+      gain2.gain.linearRampToValueAtTime(0.03, now + 0.01);
       gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
 
       osc.connect(gain).connect(ctx.destination);

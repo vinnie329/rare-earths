@@ -1,0 +1,254 @@
+/* ------------------------------------------------
+   Font exploration variant styles
+   Scoped to avoid collision with global CSS
+   ------------------------------------------------ */
+
+.supply {
+  font-family: "PP Supply Sans", var(--font-family);
+}
+
+.montreal {
+  font-family: "PP Neue Montreal", var(--font-family);
+}
+
+/* --- Display / Hero variants --- */
+
+.heroCard {
+  padding: 3rem 2rem 2rem;
+  background: var(--bg-color);
+}
+
+.heroLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.heroSup {
+  font-size: 0.4em;
+  vertical-align: super;
+  margin-left: 0.1em;
+  color: var(--accent-color);
+}
+
+.heroThin { font-weight: 100; }
+.heroLight { font-weight: 300; }
+.heroRegular { font-weight: 400; }
+.heroBold { font-weight: 700; }
+
+/* --- Body copy comparison --- */
+
+.bodyCard {
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.bodyLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.bodyText {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-color);
+}
+
+.bodySupply {
+  font-family: "PP Supply Sans", var(--font-family);
+}
+
+.bodyMontreal {
+  font-family: "PP Neue Montreal", var(--font-family);
+}
+
+.bodyHelvetica {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* --- Data grid in PP Supply Sans --- */
+
+.dataCard {
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.dataGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border-top: 1px solid var(--line-color);
+  border-left: 1px solid var(--line-color);
+}
+
+.dataCell {
+  padding: 1rem;
+  border-bottom: 1px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
+}
+
+.dataCellLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  margin-bottom: 0.4rem;
+}
+
+.dataCellValue {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.dataCellSub {
+  font-size: 0.65rem;
+  color: var(--accent-color);
+  margin-left: 0.3rem;
+}
+
+/* --- Weight specimen --- */
+
+.specimenCard {
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.specimenRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.specimenRow:last-child {
+  border-bottom: none;
+}
+
+.specimenWeight {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  width: 7rem;
+  flex-shrink: 0;
+}
+
+.specimenText {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.w100 { font-weight: 100; }
+.w200 { font-weight: 200; }
+.w300 { font-weight: 300; }
+.w350 { font-weight: 350; }
+.w400 { font-weight: 400; }
+.w500 { font-weight: 500; }
+.w600 { font-weight: 600; }
+.w700 { font-weight: 700; }
+.w900 { font-weight: 900; }
+
+/* --- Isolated view --- */
+
+.isolateContent {
+  width: 100%;
+}
+
+.isolateContentMontreal {
+  font-family: "PP Neue Montreal", var(--font-family);
+  width: 100%;
+}
+
+.isolateHero {
+  padding: 4rem 3rem;
+}
+
+.isolateHeroLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.isolateHeroTitle {
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.85;
+}
+
+.isolateHeroSup {
+  font-size: 0.35em;
+  vertical-align: super;
+  margin-left: 0.15em;
+  color: var(--accent-color);
+}
+
+.isolateBody {
+  padding: 3rem;
+  max-width: 640px;
+}
+
+.isolateBodyLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.isolateBodyText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.isolateSpecimen {
+  padding: 3rem;
+}
+
+.isolateSpecimenRow {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.isolateSpecimenRow:last-child {
+  border-bottom: none;
+}
+
+.isolateSpecimenWeight {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  width: 8rem;
+  flex-shrink: 0;
+}
+
+.isolateSpecimenText {
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}

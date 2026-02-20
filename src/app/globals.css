@@ -1,5 +1,128 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "PP Supply Sans";
+  src: url("../fonts/PPSupplySans-Variable.woff2") format("woff2"),
+       url("../fonts/PPSupplySans-Variable.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Thin.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Thin.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Light.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Light.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Book.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Book.woff") format("woff");
+  font-weight: 350;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Regular.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Medium.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-SemiBold.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../fonts/PPNeueMontreal-Bold.woff2") format("woff2"),
+       url("../fonts/PPNeueMontreal-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Thin-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Thin-Trial.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Light-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Light-Trial.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Regular-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Regular-Trial.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Medium-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Medium-Trial.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Bold-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Bold-Trial.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Heavy-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Heavy-Trial.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk";
+  src: url("../fonts/ABCMonumentGrotesk-Black-Trial.woff2") format("woff2"),
+       url("../fonts/ABCMonumentGrotesk-Black-Trial.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 :root {
   --bg-color: #f2f2f0;
   --text-color: #1a1a1a;
@@ -489,10 +612,9 @@ main {
   }
 
   .site-title {
-    font-size: 1.6rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+    font-size: var(--type-base);
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   .index-subtitle {
@@ -678,7 +800,7 @@ main {
   }
 
   .site-title {
-    font-size: 1.3rem;
+    font-size: var(--type-base);
   }
 
   .element-name {

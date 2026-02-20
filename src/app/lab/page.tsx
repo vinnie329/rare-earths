@@ -15,6 +15,9 @@ export default function LabIndex() {
         <Link href="/lab/components">
           Components <span style={{ opacity: 0.4 }}>(08)</span>
         </Link>
+        <Link href="/lab/fonts">
+          Fonts <span style={{ opacity: 0.4 }}>(20)</span>
+        </Link>
       </div>
     </div>
   );
