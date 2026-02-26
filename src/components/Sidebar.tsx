@@ -16,7 +16,7 @@ export default function Sidebar({
   return (
     <aside>
       <div className="index-header">
-        <div className="site-title">Rare Earth Index</div>
+        <div className="site-title">Rare Earths <em className="site-title-accent">( index )</em></div>
         <span className="index-subtitle label">
           17 Elements Critical to AI Infrastructure
         </span>

@@ -19,6 +19,7 @@ export default function LabLayout({
             <Link href="/lab/layouts">Layouts</Link>
             <Link href="/lab/components">Components</Link>
             <Link href="/lab/fonts">Fonts</Link>
+            <Link href="/lab/og">OG Image</Link>
           </nav>
         </div>
         <Link href="/" className="lab-back">

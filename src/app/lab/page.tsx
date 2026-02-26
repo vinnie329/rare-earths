@@ -18,6 +18,9 @@ export default function LabIndex() {
         <Link href="/lab/fonts">
           Fonts <span style={{ opacity: 0.4 }}>(20)</span>
         </Link>
+        <Link href="/lab/og">
+          OG Image <span style={{ opacity: 0.4 }}>(11)</span>
+        </Link>
       </div>
     </div>
   );
