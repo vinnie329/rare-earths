@@ -1,0 +1,416 @@
+/* ------------------------------------------------
+   Logo exploration — variant canvas cards
+   ------------------------------------------------ */
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.logoCard {
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.logoLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--line-color);
+  background: #fafaf8;
+}
+
+.logoCanvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------
+   Shared type primitives
+   ------------------------------------------------ */
+
+.monument {
+  font-family: "ABC Monument Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.supply {
+  font-family: "PP Supply Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.montreal {
+  font-family: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.serif {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+/* ------------------------------------------------
+   1. Heavy uppercase
+   ------------------------------------------------ */
+.heavy {
+  composes: monument;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   2. Thin extended
+   ------------------------------------------------ */
+.thin {
+  composes: monument;
+  font-size: 2.4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   3. Stacked
+   ------------------------------------------------ */
+.stacked {
+  composes: monument;
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  text-align: center;
+}
+
+/* ------------------------------------------------
+   4. Mixed weight
+   ------------------------------------------------ */
+.mixed {
+  composes: monument;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.mixedLight {
+  font-weight: 300;
+}
+
+.mixedBold {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------
+   5. With index accent
+   ------------------------------------------------ */
+.withAccent {
+  composes: monument;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.accentItalic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-color);
+}
+
+/* ------------------------------------------------
+   6. Monogram
+   ------------------------------------------------ */
+.monogram {
+  composes: monument;
+  font-size: 7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   7. Superscript 17
+   ------------------------------------------------ */
+.superscript {
+  composes: monument;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.sup17 {
+  font-size: 0.35em;
+  vertical-align: super;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-left: 0.15rem;
+}
+
+/* ------------------------------------------------
+   8. Atomic dot
+   ------------------------------------------------ */
+.atomicDot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.atomicDotText {
+  composes: monument;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-color);
+  flex-shrink: 0;
+}
+
+.dotRing {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-color);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dotRingInner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-color);
+}
+
+/* ------------------------------------------------
+   9. Element grid
+   ------------------------------------------------ */
+.elementGrid {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.elementGridText {
+  composes: monument;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.gridIcon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.gridCell {
+  width: 5px;
+  height: 5px;
+  background: var(--text-color);
+  border-radius: 1px;
+}
+
+.gridCellLight {
+  width: 5px;
+  height: 5px;
+  background: var(--accent-color);
+  opacity: 0.3;
+  border-radius: 1px;
+}
+
+/* ------------------------------------------------
+   10. Periodic badge
+   ------------------------------------------------ */
+.periodicWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.periodicBadge {
+  width: 64px;
+  height: 72px;
+  border: 1.5px solid var(--text-color);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.periodicNumber {
+  font-family: "ABC Monument Grotesk", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.periodicSymbol {
+  font-family: "ABC Monument Grotesk", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.periodicText {
+  composes: monument;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   11. Line divider
+   ------------------------------------------------ */
+.lineDivider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.lineDividerTitle {
+  composes: monument;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.lineDividerRule {
+  width: 100%;
+  max-width: 260px;
+  height: 1px;
+  background: var(--line-color);
+  margin: 0.6rem 0;
+}
+
+.lineDividerSub {
+  composes: monument;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+}
+
+/* ------------------------------------------------
+   12. Bracket frame
+   ------------------------------------------------ */
+.bracket {
+  composes: monument;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.bracketChar {
+  font-weight: 300;
+  color: var(--accent-color);
+}
+
+/* ------------------------------------------------
+   13. PP Supply Sans
+   ------------------------------------------------ */
+.supplySans {
+  composes: supply;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   14. PP Neue Montreal
+   ------------------------------------------------ */
+.neueMontreal {
+  composes: montreal;
+  font-size: 2.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   15. Instrument Serif italic
+   ------------------------------------------------ */
+.instrumentSerif {
+  composes: serif;
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* ------------------------------------------------
+   Responsive
+   ------------------------------------------------ */
+@media (max-width: 640px) {
+  .logoGrid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .logoCanvas {
+    height: 160px;
+    padding: 1.5rem;
+  }
+
+  .heavy { font-size: 2.2rem; }
+  .thin { font-size: 1.6rem; }
+  .stacked { font-size: 2.6rem; }
+  .mixed { font-size: 2rem; }
+  .monogram { font-size: 5rem; }
+  .superscript { font-size: 2rem; }
+  .atomicDotText { font-size: 1.6rem; }
+  .elementGridText { font-size: 1.5rem; }
+  .periodicText { font-size: 1.2rem; }
+  .lineDividerTitle { font-size: 1.8rem; }
+  .bracket { font-size: 1.8rem; }
+  .supplySans { font-size: 2rem; }
+  .neueMontreal { font-size: 2rem; }
+  .instrumentSerif { font-size: 2.2rem; }
+}
